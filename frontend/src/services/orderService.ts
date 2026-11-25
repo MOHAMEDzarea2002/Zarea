@@ -1,12 +1,12 @@
-import { api } from './api'; // عدّل المسار حسب مكان ملف الـ axios عندك
+import { api } from './api';
 import type {
   CancelOrderResponse,
   CreateOrderBody,
   CreateOrderResponse,
   MyOrdersResponse,
-} from '../types';
+} from '../types/types';
 
-// افترضت إن الـ router متركّب على /orders — عدّله لو مختلف
+
 export const createOrder = async (body: CreateOrderBody) => {
   const response = await api.post<CreateOrderResponse>('/orders', body);
 
