@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import PageTransition from '../components/layout/PageTransition';
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -21,6 +22,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <PageTransition/>
     </div>
   );
 }
