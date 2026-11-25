@@ -1,0 +1,132 @@
+const { model } = require('mongoose');
+const User = require('../models/auth.model')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+
+// Register a new user
+const cookieOptions = {
+  httpOnly: true,
+  secure: process.env.NODE_ENV === "production",
+  sameSite: "lax",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
+};
+
+const register = async (req, res) => {
+  try {
+    const { name, email, password, phone } = req.body;
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(409).json({
+        error: "User already exists",
+      });
+    }
+
+    const hashPassword = await bcrypt.hash(password, 12);
+
+    const user = await User.create({
+      name,
+      email,
+      password: hashPassword,
+      phone,
+    });
+
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: process.env.JWT_EXPIRES_IN }
+    );
+
+    const { password: _, ...userData } = user.toObject();
+
+    res.cookie("token", token, cookieOptions);
+
+    return res.status(201).json({
+      message: "Account created successfully",
+      user: userData,
+    });
+  } catch (err) {
+    if (err.code === 11000) {
+      return res.status(409).json({
+        error: "User already exists",
+      });
+    }
+
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+
+const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        error: "User not found",
+      });
+    }
+
+    const isPasswordValid = await bcrypt.compare(
+      password,
+      user.password
+    );
+
+    if (!isPasswordValid) {
+      return res.status(401).json({
+        error: "Invalid password",
+      });
+    }
+
+    const token = jwt.sign(
+      { id: user._id, role: user.role },
+      process.env.JWT_SECRET,
+      { expiresIn: process.env.JWT_EXPIRES_IN }
+    );
+
+    const { password: _, ...userData } = user.toObject();
+
+    res.cookie("token", token, cookieOptions);
+
+    return res.status(200).json({
+      message: "Login successful",
+      user: userData,
+
+    });
+  } catch (error) {
+    console.error(error);
+
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+const getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+
+    if (!user) {
+      return res.status(404).json({
+        error: "User not found",
+      });
+    }
+
+    return res.status(200).json({
+      user,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      error: "Internal server error",
+    });
+  }
+};
+const logout = (req, res) => {
+  res.clearCookie("token", { ...cookieOptions, maxAge: undefined });
+  return res.status(200).json({ message: "Logged out" });
+};
+module.exports = { register, login, logout, getMe }
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZjA2Mzk4ZWRmNTUwY2RmYTFkNWVkNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc5NDkxODQ5MiwiZXhwIjoxNzk1MDA0ODkyfQ.scaU60_MuvFymI8AqKzhnP00S8qsL6jBHja9MnZ2C6Y

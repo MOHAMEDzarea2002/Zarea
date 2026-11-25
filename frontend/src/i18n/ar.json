@@ -1,0 +1,303 @@
+{
+  "common": {
+    "currency": "ج.م",
+    "total": "الإجمالي",
+    "optional": "اختياري"
+  },
+  "language": {
+    "switchTo": "English",
+    "switchAria": "تغيير اللغة إلى الإنجليزية"
+  },
+  "colors": {
+    "black": "أسود",
+    "white": "أبيض",
+    "gray": "رمادي",
+    "grey": "رمادي",
+    "navy": "كحلي",
+    "beige": "بيج",
+    "brown": "بني",
+    "red": "أحمر",
+    "blue": "أزرق",
+    "green": "أخضر"
+  },
+  "categoryNames": {
+    "pants": "بناطيل",
+    "jackets": "جاكيتات",
+    "tracksuits": "بدل رياضية",
+    "t-shirts": "تيشيرتات",
+    "shirts": "قمصان"
+  },
+  "orderStatus": {
+    "Pending": "قيد الانتظار",
+    "Processing": "قيد التجهيز",
+    "Shipped": "تم الشحن",
+    "Delivered": "تم التوصيل",
+    "Cancelled": "ملغي"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "shop": "المتجر",
+    "newArrivals": "وصل حديثًا",
+    "categories": "الأقسام",
+    "about": "من نحن",
+    "contact": "تواصل معنا",
+    "main": "الرئيسية",
+    "mobile": "الجوال",
+    "openMenu": "فتح القائمة",
+    "closeMenu": "إغلاق القائمة",
+    "search": "بحث",
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "closeSearch": "إغلاق البحث",
+    "account": "حسابي",
+    "accountShort": "حسابي",
+    "signIn": "تسجيل الدخول",
+    "wishlist": "المفضلة",
+    "bag": "سلة التسوق",
+    "signOut": "تسجيل الخروج",
+    "searching": "بندور...",
+    "noSuggestions": "مفيش منتجات مطابقة",
+    "viewAllResults": "شوف كل النتايج لـ “{{query}}”"
+  },
+  "hero": {
+    "label": "المجموعة الجديدة 2026",
+    "title": "اكتشف<br/>أسلوبك <accent>الخاص</accent>",
+    "description": "أعد تعريف أناقتك اليومية مع قطع خالدة صُمّمت للثقة والراحة والأناقة.",
+    "shop": "تسوّق المجموعة",
+    "explore": "اكتشف المزيد",
+    "imageAlt": "عارضة أزياء ترتدي معطفًا بيج مفصّلًا من مجموعة Zarea 2026",
+    "cardLabel": "موسم جديد",
+    "cardTitle": "استكشف المجموعة"
+  },
+  "categoriesSection": {
+    "title": "اكتشف <accent>مجموعاتنا</accent>",
+    "subtitle": "اكتشف أسلوبك من خلال مجموعاتنا المنتقاة بعناية.",
+    "explore": "استكشف المجموعة",
+    "error": "تعذّر تحميل الأقسام.",
+    "retry": "حاول مرة أخرى"
+  },
+  "shop": {
+    "title": "اكتشف <accent>المجموعة</accent>",
+    "titleCategory": "<accent>{{name}}</accent>",
+    "titleSearch": "نتايج <accent>“{{query}}”</accent>",
+    "productsCount_zero": "لا يوجد منتجات",
+    "productsCount_one": "منتج واحد",
+    "productsCount_two": "منتجان",
+    "productsCount_few": "{{count}} منتجات",
+    "productsCount_many": "{{count}} منتج",
+    "productsCount_other": "{{count}} منتج",
+    "filters": "الفلاتر",
+    "sortBy": "ترتيب حسب",
+    "sort": {
+      "newest": "الأحدث",
+      "priceAsc": "السعر: من الأقل للأعلى",
+      "priceDesc": "السعر: من الأعلى للأقل"
+    },
+    "category": "القسم",
+    "all": "الكل",
+    "price": "السعر",
+    "minPrice": "أقل سعر",
+    "maxPrice": "أعلى سعر",
+    "clearAll": "امسح كل الفلاتر",
+    "noProducts": "مفيش منتجات مطابقة",
+    "adjust": "جرّب تغيّر الفلاتر.",
+    "error": "حصلت مشكلة في تحميل المنتجات.",
+    "retry": "حاول تاني",
+    "pagination": "التنقل بين الصفحات",
+    "previous": "الصفحة اللي قبلها",
+    "next": "الصفحة الجاية",
+    "page": "صفحة {{n}}"
+  },
+  "product": {
+    "breadcrumb": "مسار التنقل",
+    "shop": "المتجر",
+    "color": "اللون",
+    "size": "المقاس",
+    "inStock": "متوفر",
+    "onlyLeft": "متبقي {{count}} فقط في المخزون",
+    "outOfStock": "غير متوفر",
+    "unavailableMsg": "هذا المنتج غير متاح حاليًا.",
+    "unavailable": "غير متاح",
+    "addToBag": "أضف إلى السلة",
+    "added": "تمت الإضافة إلى السلة.",
+    "viewBag": "عرض السلة",
+    "decrease": "تقليل الكمية",
+    "increase": "زيادة الكمية",
+    "showImage": "عرض الصورة {{n}}",
+    "notFound": "المنتج غير موجود",
+    "backToShop": "العودة إلى المتجر"
+  },
+  "cart": {
+    "title": "سلة <accent>التسوق</accent>",
+    "clear": "إفراغ السلة",
+    "emptyTitle": "سلتك فارغة",
+    "emptyText": "يبدو أنك لم تضف أي منتج بعد.",
+    "startShopping": "ابدأ التسوق",
+    "remove": "إزالة {{name}}",
+    "summary": "ملخص الطلب",
+    "subtotal_zero": "المجموع الفرعي (لا توجد منتجات)",
+    "subtotal_one": "المجموع الفرعي (منتج واحد)",
+    "subtotal_two": "المجموع الفرعي (منتجان)",
+    "subtotal_few": "المجموع الفرعي ({{count}} منتجات)",
+    "subtotal_many": "المجموع الفرعي ({{count}} منتجًا)",
+    "subtotal_other": "المجموع الفرعي ({{count}} منتج)",
+    "shipping": "الشحن",
+    "shippingAtCheckout": "يُحسب عند إتمام الطلب",
+    "proceed": "إتمام الطلب",
+    "continue": "متابعة التسوق",
+    "finalNote": "يتم تأكيد السعر النهائي عند إرسال الطلب."
+  },
+  "auth": {
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "showPassword": "إظهار كلمة المرور",
+    "hidePassword": "إخفاء كلمة المرور",
+    "login": {
+      "title": "أهلًا <accent>بعودتك</accent>",
+      "subtitle": "سجّل الدخول لمتابعة حسابك.",
+      "submit": "تسجيل الدخول",
+      "submitting": "جارٍ تسجيل الدخول...",
+      "noAccount": "ليس لديك حساب؟",
+      "createOne": "أنشئ حسابًا"
+    },
+    "register": {
+      "title": "إنشاء <accent>حساب</accent>",
+      "subtitle": "انضم إلينا واكتشف أسلوبك الخاص.",
+      "fullName": "الاسم بالكامل",
+      "phone": "رقم الهاتف",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "submit": "إنشاء الحساب",
+      "submitting": "جارٍ إنشاء الحساب...",
+      "haveAccount": "لديك حساب بالفعل؟",
+      "signIn": "تسجيل الدخول",
+      "passwordShort": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل.",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين."
+    }
+  },
+  "about": {
+    "title": "عن <accent>Zarea</accent>",
+    "intro": "علامة أزياء تؤمن بأن الأناقة الحقيقية بسيطة، وأن القطعة الجيدة تستحق أن تبقى معك سنوات.",
+    "storyTitle": "حكايتنا",
+    "story": "بدأنا بفكرة بسيطة: ملابس يومية تجمع بين الراحة والأناقة من غير تعقيد. كل قطعة نختارها نُعدّها بعناية لتناسب حياتك اليومية وتصمد مع الوقت.",
+    "values": {
+      "quality": {
+        "title": "الجودة",
+        "text": "أقمشة مختارة بعناية، وخياطة دقيقة في كل تفصيلة."
+      },
+      "craft": {
+        "title": "الحرفية",
+        "text": "تصميمات مدروسة تبرز أسلوبك من غير مبالغة."
+      },
+      "timeless": {
+        "title": "الخلود",
+        "text": "قطع لا تخرج عن الموضة، وتعيش في خزانتك لمواسم كثيرة."
+      }
+    },
+    "ctaTitle": "اكتشف مجموعتنا",
+    "cta": "تسوّق الآن"
+  },
+  "contact": {
+    "title": "تواصل <accent>معنا</accent>",
+    "subtitle": "فريقنا جاهز لمساعدتك في طلبك أو المقاسات أو أي استفسار آخر.",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "address": "العنوان",
+    "hours": "ساعات العمل",
+    "addressValue": "القاهرة، مصر",
+    "hoursValue": "السبت – الخميس، 10:00 – 18:00"
+  },
+  "notFound": {
+    "title": "الصفحة <accent>غير موجودة</accent>",
+    "text": "الصفحة اللي بتدور عليها مش موجودة، أو اتنقلت لمكان تاني.",
+    "back": "الرجوع للرئيسية"
+  },
+  "footer": {
+    "tagline": "قطع يومية مصممة للثقة والراحة والأناقة.",
+    "shop": "المتجر",
+    "help": "المساعدة",
+    "rights": "© {{year}} Zarea. جميع الحقوق محفوظة.",
+    "payments": "الدفع عند الاستلام · إنستاباي"
+  },
+  "wishlist": {
+    "title": "قائمة <accent>المفضلة</accent>",
+    "emptyTitle": "قائمة المفضلة فاضية",
+    "emptyText": "احفظ القطع اللي عجبتك وهتلاقيها هنا في أي وقت.",
+    "add": "أضف للمفضلة",
+    "remove": "إزالة من المفضلة"
+  },
+  "home": {
+    "docTitle": "Zarea | أزياء يومية فاخرة",
+    "newArrivals": {
+      "title": "وصل <accent>حديثًا</accent>",
+      "subtitle": "أحدث القطع اللي اتضافت للمجموعة.",
+      "viewAll": "عرض الكل"
+    },
+    "editorial": {
+      "quote": "ملابس تليق بالحياة اللي <accent>بتحبها</accent>.",
+      "cta": "اكتشف حكايتنا",
+      "imageAlt": "عارضة ترتدي زيًّا بيجيًا مريحًا في استوديو محايد"
+    }
+  },
+  "account": {
+    "title": "حسابي <accent>الشخصي</accent>",
+    "profile": "بياناتي",
+    "ordersTitle": "طلباتي",
+    "noOrders": "لم تقم بأي طلب بعد.",
+    "orderNumber": "طلب رقم #{{number}}",
+    "placedOn": "تاريخ الطلب: {{date}}",
+    "paymentStatus": {
+      "Pending": "الدفع قيد الانتظار",
+      "Paid": "تم الدفع"
+    },
+    "cancel": "إلغاء الطلب",
+    "cancelConfirm": "هل تريد إلغاء هذا الطلب؟",
+    "cancelYes": "نعم، ألغِ الطلب",
+    "cancelNo": "إبقاء الطلب",
+    "cancelling": "جارٍ الإلغاء...",
+    "error": "تعذّر تحميل طلباتك.",
+    "retry": "حاول مرة أخرى"
+  },
+  "checkout": {
+    "title": "إتمام <accent>الطلب</accent>",
+    "shippingDetails": "بيانات الشحن",
+    "fullName": "الاسم بالكامل",
+    "phone": "رقم الهاتف",
+    "city": "المدينة",
+    "street": "الشارع",
+    "building": "المبنى / الشقة",
+    "notes": "ملاحظات",
+    "paymentTitle": "الدفع",
+    "payment": {
+      "COD": {
+        "label": "الدفع عند الاستلام",
+        "hint": "ادفع عند وصول طلبك."
+      },
+      "InstaPay": {
+        "label": "إنستاباي",
+        "hint": "حوّل المبلغ الآن وأدخل الرقم المرجعي للتأكيد."
+      }
+    },
+    "instapay": {
+      "step1": "حوّل <b>{{amount}}</b> عبر إنستاباي إلى العنوان أدناه.",
+      "step2": "أدخل الرقم المرجعي لعملية التحويل.",
+      "step3": "أكّد طلبك، وسنتواصل معك بعد التحقق من التحويل.",
+      "copy": "نسخ",
+      "copied": "تم النسخ",
+      "copyAria": "نسخ عنوان إنستاباي",
+      "reference": "الرقم المرجعي للعملية"
+    },
+    "placeOrder": "تأكيد الطلب",
+    "placing": "جارٍ تأكيد الطلب...",
+    "yourOrder": "طلبك",
+    "editBag": "تعديل السلة"
+  },
+  "confirmation": {
+    "title": "شكرًا <accent>لك</accent>",
+    "message": "تم استلام طلبك رقم <b>#{{number}}</b>. سنتواصل معك لتأكيد التوصيل.",
+    "shippingTo": "عنوان الشحن",
+    "payment": "الدفع",
+    "status": "الحالة",
+    "awaiting": "في انتظار التحقق من الدفع",
+    "verified": "تم التحقق من الدفع",
+    "continueShopping": "متابعة التسوق"
+  }
+}

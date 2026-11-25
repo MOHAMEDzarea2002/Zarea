@@ -1,0 +1,295 @@
+{
+  "common": {
+    "currency": "EGP",
+    "total": "Total",
+    "optional": "optional"
+  },
+  "language": {
+    "switchTo": "العربية",
+    "switchAria": "Switch language to Arabic"
+  },
+  "colors": {
+    "black": "Black",
+    "white": "White",
+    "gray": "Gray",
+    "grey": "Grey",
+    "navy": "Navy",
+    "beige": "Beige",
+    "brown": "Brown",
+    "red": "Red",
+    "blue": "Blue",
+    "green": "Green"
+  },
+  "categoryNames": {
+    "pants": "Pants",
+    "jackets": "Jackets",
+    "tracksuits": "Tracksuits",
+    "t-shirts": "T-Shirts",
+    "shirts": "Shirts"
+  },
+  "orderStatus": {
+    "Pending": "Pending",
+    "Processing": "Processing",
+    "Shipped": "Shipped",
+    "Delivered": "Delivered",
+    "Cancelled": "Cancelled"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "newArrivals": "New Arrivals",
+    "categories": "Categories",
+    "about": "About Us",
+    "contact": "Contact",
+    "main": "Main",
+    "mobile": "Mobile",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "search": "Search",
+    "searchPlaceholder": "Search for products...",
+    "closeSearch": "Close search",
+    "account": "My account",
+    "accountShort": "Account",
+    "signIn": "Sign in",
+    "wishlist": "Wishlist",
+    "bag": "Shopping bag",
+    "signOut": "Sign out",
+    "searching": "Searching...",
+    "noSuggestions": "No matching products",
+    "viewAllResults": "View all results for “{{query}}”"
+  },
+  "hero": {
+    "label": "New Collection 2026",
+    "title": "Discover Your<br/>Signature <accent>Style</accent>",
+    "description": "Redefine your everyday style with timeless pieces designed for confidence, comfort, and elegance.",
+    "shop": "Shop Collection",
+    "explore": "Explore More",
+    "imageAlt": "Model wearing a tailored beige coat from the Zarea 2026 collection",
+    "cardLabel": "New Season",
+    "cardTitle": "Explore the Collection"
+  },
+  "categoriesSection": {
+    "title": "Explore Our <accent>Collections</accent>",
+    "subtitle": "Discover your style through our curated collections.",
+    "explore": "Explore Collection",
+    "error": "Failed to load categories.",
+    "retry": "Try again"
+  },
+  "shop": {
+    "title": "Explore the <accent>Collection</accent>",
+    "titleCategory": "<accent>{{name}}</accent>",
+    "titleSearch": "Results for <accent>“{{query}}”</accent>",
+    "productsCount_one": "{{count}} product",
+    "productsCount_other": "{{count}} products",
+    "filters": "Filters",
+    "sortBy": "Sort by",
+    "sort": {
+      "newest": "Newest",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low"
+    },
+    "category": "Category",
+    "all": "All",
+    "price": "Price",
+    "minPrice": "Minimum price",
+    "maxPrice": "Maximum price",
+    "clearAll": "Clear all filters",
+    "noProducts": "No products found",
+    "adjust": "Try adjusting your filters.",
+    "error": "Failed to load products.",
+    "retry": "Try again",
+    "pagination": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {{n}}"
+  },
+  "product": {
+    "breadcrumb": "Breadcrumb",
+    "shop": "Shop",
+    "color": "Color",
+    "size": "Size",
+    "inStock": "In stock",
+    "onlyLeft": "Only {{count}} left in stock",
+    "outOfStock": "Out of stock",
+    "unavailableMsg": "This product is currently unavailable.",
+    "unavailable": "Unavailable",
+    "addToBag": "Add to Bag",
+    "added": "Added to your bag.",
+    "viewBag": "View bag",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "showImage": "Show image {{n}}",
+    "notFound": "Product not found",
+    "backToShop": "Back to shop"
+  },
+  "cart": {
+    "title": "Shopping <accent>Bag</accent>",
+    "clear": "Clear bag",
+    "emptyTitle": "Your bag is empty",
+    "emptyText": "Looks like you haven't added anything yet.",
+    "startShopping": "Start Shopping",
+    "remove": "Remove {{name}}",
+    "summary": "Order Summary",
+    "subtotal_one": "Subtotal ({{count}} item)",
+    "subtotal_other": "Subtotal ({{count}} items)",
+    "shipping": "Shipping",
+    "shippingAtCheckout": "Calculated at checkout",
+    "proceed": "Proceed to Checkout",
+    "continue": "Continue shopping",
+    "finalNote": "The final price is confirmed when your order is placed."
+  },
+  "auth": {
+    "email": "Email",
+    "password": "Password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "login": {
+      "title": "Welcome <accent>Back</accent>",
+      "subtitle": "Sign in to continue to your account.",
+      "submit": "Sign In",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "createOne": "Create one"
+    },
+    "register": {
+      "title": "Create <accent>Account</accent>",
+      "subtitle": "Join us and discover your signature style.",
+      "fullName": "Full Name",
+      "phone": "Phone",
+      "confirmPassword": "Confirm Password",
+      "submit": "Create Account",
+      "submitting": "Creating account...",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "passwordShort": "Password must be at least 8 characters.",
+      "passwordMismatch": "Passwords do not match."
+    }
+  },
+  "about": {
+    "title": "About <accent>Zarea</accent>",
+    "intro": "A fashion label built on the belief that real elegance is simple, and that a well-made piece deserves to stay with you for years.",
+    "storyTitle": "Our Story",
+    "story": "We started with a simple idea: everyday clothes that balance comfort and style without fuss. Every piece we choose is carefully made to suit your daily life and to last.",
+    "values": {
+      "quality": {
+        "title": "Quality",
+        "text": "Carefully selected fabrics and precise tailoring in every detail."
+      },
+      "craft": {
+        "title": "Craft",
+        "text": "Thoughtful designs that highlight your style without excess."
+      },
+      "timeless": {
+        "title": "Timeless",
+        "text": "Pieces that never go out of style and stay in your wardrobe for seasons."
+      }
+    },
+    "ctaTitle": "Discover our collection",
+    "cta": "Shop now"
+  },
+  "contact": {
+    "title": "Get in <accent>Touch</accent>",
+    "subtitle": "We're here to help with your orders, sizing, or any other question.",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "hours": "Working hours",
+    "addressValue": "Cairo, Egypt",
+    "hoursValue": "Saturday – Thursday, 10:00 – 18:00"
+  },
+  "notFound": {
+    "title": "Page not <accent>found</accent>",
+    "text": "The page you're looking for doesn't exist or has been moved.",
+    "back": "Back to home"
+  },
+  "footer": {
+    "tagline": "Everyday essentials designed for confidence, comfort, and elegance.",
+    "shop": "Shop",
+    "help": "Help",
+    "rights": "© {{year}} Zarea. All rights reserved.",
+    "payments": "Cash on Delivery · InstaPay"
+  },
+  "wishlist": {
+    "title": "My <accent>Wishlist</accent>",
+    "emptyTitle": "Your wishlist is empty",
+    "emptyText": "Save the pieces you love and find them here later.",
+    "add": "Add to wishlist",
+    "remove": "Remove from wishlist"
+  },
+  "home": {
+    "docTitle": "Zarea | Luxury Everyday Fashion",
+    "newArrivals": {
+      "title": "New <accent>Arrivals</accent>",
+      "subtitle": "The latest pieces, just added to the collection.",
+      "viewAll": "View all"
+    },
+    "editorial": {
+      "quote": "Dressed for the life you <accent>love</accent>.",
+      "cta": "Discover the story",
+      "imageAlt": "Model wearing a relaxed beige outfit in a neutral studio"
+    }
+  },
+  "account": {
+    "title": "My <accent>Account</accent>",
+    "profile": "Profile",
+    "ordersTitle": "My Orders",
+    "noOrders": "You haven't placed any orders yet.",
+    "orderNumber": "Order #{{number}}",
+    "placedOn": "Placed on {{date}}",
+    "paymentStatus": {
+      "Pending": "Payment pending",
+      "Paid": "Paid"
+    },
+    "cancel": "Cancel order",
+    "cancelConfirm": "Cancel this order?",
+    "cancelYes": "Yes, cancel",
+    "cancelNo": "Keep order",
+    "cancelling": "Cancelling...",
+    "error": "Failed to load your orders.",
+    "retry": "Try again"
+  },
+  "checkout": {
+    "title": "Check<accent>out</accent>",
+    "shippingDetails": "Shipping Details",
+    "fullName": "Full Name",
+    "phone": "Phone",
+    "city": "City",
+    "street": "Street",
+    "building": "Building / Apartment",
+    "notes": "Notes",
+    "paymentTitle": "Payment",
+    "payment": {
+      "COD": {
+        "label": "Cash on Delivery",
+        "hint": "Pay when your order arrives."
+      },
+      "InstaPay": {
+        "label": "InstaPay",
+        "hint": "Transfer now and confirm with the reference number."
+      }
+    },
+    "instapay": {
+      "step1": "Transfer <b>{{amount}}</b> via InstaPay to the address below.",
+      "step2": "Enter the transaction reference number.",
+      "step3": "Place your order. We'll confirm it once we verify the transfer.",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyAria": "Copy InstaPay address",
+      "reference": "Transaction Reference"
+    },
+    "placeOrder": "Place Order",
+    "placing": "Placing order...",
+    "yourOrder": "Your Order",
+    "editBag": "Edit bag"
+  },
+  "confirmation": {
+    "title": "Thank <accent>you</accent>",
+    "message": "Your order <b>#{{number}}</b> has been placed. We'll contact you to confirm delivery.",
+    "shippingTo": "Shipping to",
+    "payment": "Payment",
+    "status": "Status",
+    "awaiting": "Awaiting payment verification",
+    "verified": "Payment verified",
+    "continueShopping": "Continue Shopping"
+  }
+}
