@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-const MIN_SHOW_MS = 900; // أقل مدة تظهر فيها الشاشة
-const FADE_MS = 600;
+const MIN_SHOW_MS = 1000; // أقل مدة تظهر فيها الشاشة
+const FADE_MS = 400;
 
 export default function SplashScreen() {
   const { t } = useTranslation();
