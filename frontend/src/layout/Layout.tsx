@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import PageTransition from '../components/layout/PageTransition';
+import SplashScreen from '../components/common/SplashScreen';
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -17,12 +18,13 @@ export default function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-secondary font-body text-primary">
       <ScrollToTop />
+      <SplashScreen/>
       <Navbar />
       <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
-      <PageTransition/>
+      {/* <PageTransition/> */}
     </div>
   );
 }
