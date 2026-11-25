@@ -1,6 +1,5 @@
 
 import { useEffect } from 'react';
-import Navbar from './components/layout/Navbar';
 
 import AppRoutes from './routes/AppRoutes';
 import { useDispatch } from 'react-redux';

@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Heart, LogOut, Menu, Search, ShoppingBag, User, X } from 'lucide-react';
 import { logoutUser } from '../../features/auth/authThunk';
-import { api } from '../../services/api'; // عدّل المسار لو مختلف
+import { api } from '../../services/api';
+
 import type { Product, ProductsResponse } from '../../types/types';
 import LanguageSwitcher from '../language/LanguageSwitcher';
 
