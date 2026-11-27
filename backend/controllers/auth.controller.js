@@ -126,12 +126,13 @@ const getMe = async (req, res) => {
   }
 };
 const logout = (req, res) => {
-  res.clearCookie("token", { ...cookieOptions, maxAge: undefined });
-  return res.clearCookie("token", {
+  res.clearCookie("token", {
     httpOnly: true,
     secure: true,
     sameSite: "none",
   });
+
+  return res.status(200).json({ message: "Logged out successfully" });
 };
 module.exports = { register, login, logout, getMe }
 
