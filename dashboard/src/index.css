@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@theme {
+  /* الخلفيات */
+  --color-canvas: #F5F7FA;     /* خلفية الصفحة */
+  --color-surface: #FFFFFF;    /* الكروت والجداول */
+  --color-sidebar: #0F172A;    /* القائمة الجانبية */
+  --color-border: #E2E8F0;
+
+  /* النصوص */
+  --color-ink: #0F172A;        /* النص الأساسي */
+  --color-muted: #64748B;      /* النص الثانوي */
+
+  /* اللون الأساسي للأزرار والروابط النشطة */
+  --color-brand: #4F46E5;
+  --color-brand-hover: #4338CA;
+
+  /* ألوان حالات الطلب */
+  --color-status-pending: #D97706;
+  --color-status-processing: #2563EB;
+  --color-status-shipped: #7C3AED;
+  --color-status-delivered: #16A34A;
+  --color-status-cancelled: #DC2626;
+
+  --font-body: "Inter", system-ui, sans-serif;
+}

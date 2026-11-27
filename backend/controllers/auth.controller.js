@@ -105,6 +105,7 @@ const login = async (req, res) => {
     });
   }
 };
+
 const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
@@ -129,4 +130,4 @@ const logout = (req, res) => {
   return res.status(200).json({ message: "Logged out" });
 };
 module.exports = { register, login, logout, getMe }
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZjA2Mzk4ZWRmNTUwY2RmYTFkNWVkNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc5NDkxODQ5MiwiZXhwIjoxNzk1MDA0ODkyfQ.scaU60_MuvFymI8AqKzhnP00S8qsL6jBHja9MnZ2C6Y
+

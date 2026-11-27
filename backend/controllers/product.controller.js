@@ -4,67 +4,56 @@ const { uploadCloudinary } = require('../services/upload.service')
 
 const createProduct = async (req, res) => {
   try {
-    // image
-    const { mainImage, gallery } = req.files
-    const variants = req.body.variants
+    const { mainImage, gallery } = req.files || {};
 
-    // submit mainImage buffer
     if (!mainImage || mainImage.length === 0) {
+      return res.status(400).json({ message: "mainImage is required" });
+    }
+
+    // نفحص الـ variants قبل ما نرفع أي صورة
+    let variantsJson;
+    try {
+      variantsJson = JSON.parse(req.body.variants);
+    } catch {
+      return res.status(400).json({ message: "Variants must be valid JSON" });
+    }
+
+    if (!Array.isArray(variantsJson) || variantsJson.length === 0) {
+      return res.status(400).json({ message: "Variants must be a non-empty array" });
+    }
+
+    const keys = new Set(variantsJson.map((v) => `${v.color}-${v.size}`));
+    if (keys.size !== variantsJson.length) {
       return res.status(400).json({
-        message: "mainImage are required"
-      })
-    }
-    const mainImageUploadUrl = await uploadCloudinary(mainImage[0].buffer)
-
-    // submit galleryUploads buffer
-    const galleryUploads = (gallery || []).map((gallery) => {
-      return uploadCloudinary(gallery.buffer)
-    })
-
-    // promise all gallery
-    let galleryUrl = await Promise.all(galleryUploads)
-
-    // url all images
-    const images = [mainImageUrl, ...galleryUrl]
-
-
-
-    const variantsSet = new Set()
-
-    let variantsJson = JSON.parse(variants)
-
-    // check on variants
-    if (!Array.isArray(variantsJson)) {
-      return res.status(400).json({
-        Message: "Variants must be an array"
-      })
+        message: "Duplicate color and size combinations are not allowed.",
+      });
     }
 
-    // loop on variants
-    variantsJson?.forEach((variant) => {
-      const key = `${variant.color}-${variant.size}`;
-      variantsSet.add(key)
-    })
+    // رفع الصور
+    const mainImageUrl = await uploadCloudinary(mainImage[0].buffer);
+    const galleryUrls = await Promise.all(
+      (gallery || []).map((img) => uploadCloudinary(img.buffer)),
+    );
 
-    // Check the value variants for duplicates.
-    if (variantsJson.length > variantsSet.size) {
-      return res.status(400).json({ message: "Duplicate color and size combinations are not allowed." })
-    }
-
-    const ProductData = { ...req.body, images: images, variants: variantsJson }
-    // create product
-    const newProduct = await Product.create(ProductData)
+    const newProduct = await Product.create({
+      ...req.body,
+      variants: variantsJson,
+      images: [mainImageUrl, ...galleryUrls],
+    });
 
     res.status(201).json({
       success: true,
       message: "Product created successfully",
-      data: newProduct
-    })
+      data: newProduct,
+    });
   } catch (err) {
-    console.log(err)
-    res.status(400).json({ success: false, message: err.message })
+    console.log(err);
+    if (err.name === "ValidationError" || err.name === "CastError") {
+      return res.status(400).json({ message: "Invalid product data" });
+    }
+    res.status(500).json({ message: "Internal server error" });
   }
-}
+};
 
 
 const getAllProducts = async (req, res) => {
@@ -157,82 +146,75 @@ const getProductById = async (req, res) => {
 }
 const updateProduct = async (req, res) => {
   try {
-    const idProduct = req.params.id
-    const variants = req.body.variants
-    const { mainImage, gallery } = req.files
-    const updateProduct = { ...req.body }
+    const product = await Product.findById(req.params.id);
 
-    // check product found
-    const existsProduct = await Product.findById({ _id: req.params.id })
-
-    if (!existsProduct) {
-      return res.status(404).json({
-        message: "Not Found Product"
-      })
+    if (!product) {
+      return res.status(404).json({ message: "Product not found" });
     }
 
-    // kep existing images
-    let imagesUrl = [...(existsProduct.images) || []]
-    // upload mainImage
+    const { mainImage, gallery } = req.files || {};
+    const updateData = { ...req.body };
+
+    // الصور بتتغير من الملفات بس، مش من الـ body
+    delete updateData.images;
+    delete updateData.variants;
+
+    // الصور: نبدأ بالقديمة ونغيّر اللي اتبعت بس
+    let images = [...(product.images || [])];
+
     if (mainImage?.length > 0) {
-      const mainImageUpload = await uploadCloudinary(mainImage[0].buffer)
-      imagesUrl[0] = mainImageUpload
+      images[0] = await uploadCloudinary(mainImage[0].buffer);
     }
 
     if (gallery?.length > 0) {
-      const galleryUpload = (gallery || []).map((imag) => {
-        return uploadCloudinary(imag.buffer)
-      })
-      const galleryUrls = await Promise.all(galleryUpload)
-      imagesUrl = [imagesUrl[0], ...galleryUrls]
+      const galleryUrls = await Promise.all(
+        gallery.map((img) => uploadCloudinary(img.buffer)),
+      );
+      images = [images[0], ...galleryUrls];
     }
 
+    updateData.images = images;
 
-    const variantsSet = new Set()
+    // الـ variants اختيارية في التعديل
+    if (req.body.variants !== undefined) {
+      let variantsJson;
+      try {
+        variantsJson = JSON.parse(req.body.variants);
+      } catch {
+        return res.status(400).json({ message: "Variants must be valid JSON" });
+      }
 
-    // Converting  variants to JSON
-    const variantsJson = JSON.parse(variants)
+      if (!Array.isArray(variantsJson) || variantsJson.length === 0) {
+        return res.status(400).json({ message: "Variants must be a non-empty array" });
+      }
 
-    // Check Is 'variant' not an array
-    if (!Array.isArray(variantsJson)) {
-      res.status(400).json({
-        message: "variants must be an array"
-      })
+      const keys = new Set(variantsJson.map((v) => `${v.color}-${v.size}`));
+      if (keys.size !== variantsJson.length) {
+        return res.status(400).json({
+          message: "Duplicate color and size combinations are not allowed.",
+        });
+      }
+
+      updateData.variants = variantsJson;
     }
 
-    // Loop on variants and add Set
-    variantsJson.forEach((variant) => {
-      const key = `${variant.size}-${variant.color}`
-      return variantsSet.add(key)
-    })
-    // check Duplicate variants
-    if (variantsJson.length > variantsSet.size) {
-      return res.status(400).json({
-        message: "Duplicate color and size combinations are not allowed."
-      })
-    }
+    const updated = await Product.findByIdAndUpdate(req.params.id, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
-    const productData = { ...updateProduct, variants: variantsJson, images: imagesUrl }
-    // updataProduct and save data
-    const product = await Product.findByIdAndUpdate(idProduct, productData, {
-      returnDocument: 'after',
-      runValidators: true
-    })
-
-
-    res.status(200).json({
-      success: true,
-      data: product
-    })
+    res.status(200).json({ success: true, data: updated });
   } catch (error) {
-    console.log(error)
-    if (error.name === "ValidationError" || error.name === "CastError")
-      return res.status(400).json({ message: error.message });
-    if (error.code === 11000)
+    console.log(error);
+    if (error.name === "ValidationError" || error.name === "CastError") {
+      return res.status(400).json({ message: "Invalid product data" });
+    }
+    if (error.code === 11000) {
       return res.status(409).json({ message: "Duplicate value" });
+    }
     res.status(500).json({ message: "Internal server error" });
   }
-}
+};
 
 
 const deleteProduct = async (req, res) => {
